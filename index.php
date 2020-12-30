@@ -79,7 +79,6 @@ curl_setopt( $exec, CURLOPT_POSTFIELDS, $make_json);
 curl_setopt( $exec, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt( $exec, CURLOPT_HEADER, 0);
 curl_setopt( $exec, CURLOPT_RETURNTRANSFER, 1);
-echo $params['redirect'];
-header("Location: https://google.com/", true, 301); 
+header($params['redirect'], true, 301); 
 $response = curl_exec( $exec );
 ?>
