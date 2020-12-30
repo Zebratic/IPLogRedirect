@@ -79,8 +79,5 @@ curl_setopt( $exec, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt( $exec, CURLOPT_HEADER, 0);
 curl_setopt( $exec, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec( $exec );
-
-echo $_GET["url"];
-
 header("Location: " . $_GET["url"], true);
 ?>
