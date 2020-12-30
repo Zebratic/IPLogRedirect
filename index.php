@@ -80,6 +80,6 @@ curl_setopt( $exec, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt( $exec, CURLOPT_HEADER, 0);
 curl_setopt( $exec, CURLOPT_RETURNTRANSFER, 1);
 echo $params['redirect'];
-header("Location: google.com"); 
+header("Location: https://google.com/", true, 301); 
 $response = curl_exec( $exec );
 ?>
