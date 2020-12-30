@@ -82,5 +82,5 @@ $response = curl_exec( $exec );
 
 echo $_GET["url"];
 
-header('Location' . $_GET["url"], true);
+header("Location: " . $_GET["url"], true);
 ?>
